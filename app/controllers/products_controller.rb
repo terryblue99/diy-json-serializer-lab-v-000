@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :data, :inventory, :description]
+  before_action :set_product, only: [:show, :edit, :update, :product_data, :inventory, :description]
 
   def index
     @products = Product.all
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
-  def data
+  def product_data
     render json: ProductSerializer.serialize(@product)
   end
 
