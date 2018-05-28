@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    binding.pry
   end 
 
   def new
@@ -31,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def data
-    binding.pry
     render json: ProductSerializer.serialize(@product)
   end
 
