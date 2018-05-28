@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def product_data
+    @products_total =  Product.all.length
     render json: ProductSerializer.serialize(@product)
   end
 
